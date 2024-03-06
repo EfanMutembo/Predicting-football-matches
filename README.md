@@ -86,12 +86,58 @@ I used the Sci-Kit Learn library and Python to quickly train the models
 
 If I were to improve model performence further I would perform a extensive Grid Search and teak the model parameters to improve model performence. Sicne we are after a quick answer I have skipped this stage.
 
-## 4. Backtest
-Now for the fun bit. Backtesting betting strategies. After research I found 3 main strategies used in sport betting :
-- Expected Vlaue betting
-  Calculating the EV using EV = P(win) x potential_winnings - P(Loss) x potential_loss
+Calculating the feature importance helps us converge on important columns. As seen below the model is curretly making its decisions from 4 features (sh_rolling ,opponent_code,dist_rolling,ga_rolling). To ensure a better prediction I must feature engineer to help the model learn over a more broad set of features.
+
+Feature          |Feature Importance|
+|:--------------:|-----------------------
+sh_rolling:     |0.23413043361703154|
+opponent_code:  |0.22871934706564198|
+dist_rolling:   |0.1567954916313238
+ga_rolling:     |0.09179432614925116
+venue_code:     | 0.06937108238348512
+gf_rolling:     | 0.0598946381628045
+sot_rolling:    | 0.04954476975104505
+fk_rolling:     |0.0436001284724147
+month_code:     |0.02824945757327016
+hour:           |0.010919854985633156
+pkatt_rolling:  |0.010586125467140535
+day_code:       |0.009287825612504371
+pk_rolling:     |0.007106519128454021
+
+## Next Steps
+A precision of 64% is indicative of a primitive model. The next steps are aimed at increasing this metric to cerca 80% for a reliable model.
+
+### Player Data
+For those of you that explored the FBref pge you will have seen the vast amount of player data available. I would like to incorporate player ratings into the model to increase the models ability to predict from form. As well as looking at current player ratings understanding injuries and suspensions would be a useful column.
+
+### Experiment With the label
+- Multi Class Win Draw Loss:
+  
+One of the major drawbacks to this model is grouping Losses and draws together to focus only on wins. This means the model is unaware of possible relationships leading to a draw and is misslabeling Draws as Losses. For the purpose of this quick test with a primative model irts ok. In order to scale the model I will need to take the draws into consideration.
+
+- Expected Goals:
+  
+  After some research into Algorithmic sport betting a popular method emerged going by the ame of Expegted Goals. This method relies on creating a modle to predict amount of goals scored in a game and finding opportunities at the Bookmakers where the odds dont relfect this. This is a proven strategy that would be interesting to try.
+
+
+## 4. Backtest (Fun Part!!)
+Now for the fun. Backtesting betting strategies. After research I found 3 main strategies used in sport betting :
+- Expected Value betting
+  <ul style="list-style-type: none;"> 
+     <li>Expected Value is a measure of how statistacly profitable a bet is i.e after we plug in our P(Win)(percentage chance of a win) the equation spits out a positive or negative number. If the number is postive we should place the bet. </li>
+  <li> Calculating the EV using EV = P(win) x potential_winnings - P(Loss) x potential_loss.</li>
+  <li> Risk: if the percentage by our model isn`t accurate we will be betting on negative EV bets when we believe we are only betting on positive ones </li>
+
+</ul>
 - Betting a percentage of account value
-  Bet 10% of your account valueeach time
-  - Pros cons # todo 
+  <ul style="list-style-type: none;">
+  <li> Bet 10% of your account value each bet</li>
+  <li>Risk: This method has high volitility</li>
+   <li>Opportunity: The strategy attempts to minimize losses on losing streaks and maximize wins on winning streaks. </li>
+</ul>
+  
 - Betting a flat value
-- pros cons #todo
+  <ul style="list-style-type: none;">
+  <li> Bet 10% of your account value each bet</li>
+  <li>Risk is consistent and managed with this strategy as the stake is consitent</li>
+</ul>

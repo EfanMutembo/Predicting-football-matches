@@ -104,6 +104,31 @@ pkatt_rolling:  |0.010586125467140535
 day_code:       |0.009287825612504371
 pk_rolling:     |0.007106519128454021
 
+
+
+## 4. Backtest (Fun Part!!)
+Now for the fun. Backtesting betting strategies. After research I found 3 main strategies used in sport betting :
+- Expected Value betting
+  <ul style="list-style-type: none;"> 
+     <li>Expected Value is a measure of how statistacly profitable a bet is i.e after we plug in our P(Win)(percentage chance of a win) the equation spits out a positive or negative number. If the number is postive we should place the bet. </li>
+  <li> Calculating the EV using EV = P(win) x potential_winnings - P(Loss) x potential_loss.</li>
+  <li> Risk: if the percentage by our model isn`t accurate we will be betting on negative EV bets when we believe we are only betting on positive ones </li>
+</ul>
+
+- Betting a percentage of account value
+  <ul style="list-style-type: none;">
+  <li> Bet 10% of your account value each bet</li>
+  <li>Risk: This method has high volitility</li>
+   <li>Opportunity: The strategy attempts to minimize losses on losing streaks and maximize wins on winning streaks. </li>
+</ul>
+
+- Betting a percentage of account value
+  <ul style="list-style-type: none;">
+  <li> Bet 10% of your account value each bet</li>
+  <li>Risk: This method has high volitility</li>
+   <li>Opportunity: The strategy attempts to minimize losses on losing streaks and maximize wins on winning streaks. </li>
+</ul>
+
 ## Next Steps
 A precision of 64% is indicative of a primitive model. The next steps are aimed at increasing this metric to cerca 80% for a reliable model.
 
@@ -119,22 +144,6 @@ One of the major drawbacks to this model is grouping Losses and draws together t
   
   After some research into Algorithmic sport betting a popular method emerged going by the ame of Expegted Goals. This method relies on creating a modle to predict amount of goals scored in a game and finding opportunities at the Bookmakers where the odds dont relfect this. This is a proven strategy that would be interesting to try.
 
-
-## 4. Backtest (Fun Part!!)
-Now for the fun. Backtesting betting strategies. After research I found 3 main strategies used in sport betting :
-- Expected Value betting
-  <ul style="list-style-type: none;"> 
-     <li>Expected Value is a measure of how statistacly profitable a bet is i.e after we plug in our P(Win)(percentage chance of a win) the equation spits out a positive or negative number. If the number is postive we should place the bet. </li>
-  <li> Calculating the EV using EV = P(win) x potential_winnings - P(Loss) x potential_loss.</li>
-  <li> Risk: if the percentage by our model isn`t accurate we will be betting on negative EV bets when we believe we are only betting on positive ones </li>
-
-</ul>
-- Betting a percentage of account value
-  <ul style="list-style-type: none;">
-  <li> Bet 10% of your account value each bet</li>
-  <li>Risk: This method has high volitility</li>
-   <li>Opportunity: The strategy attempts to minimize losses on losing streaks and maximize wins on winning streaks. </li>
-</ul>
   
 - Betting a flat value
   <ul style="list-style-type: none;">

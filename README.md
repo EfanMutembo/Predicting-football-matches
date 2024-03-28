@@ -122,14 +122,54 @@ Now for the fun. Backtesting betting strategies. After research I found 3 main s
    <li>Opportunity: The strategy attempts to minimize losses on losing streaks and maximize wins on winning streaks. </li>
 </ul>
 
-- Betting a percentage of account value
+- Betting a flat value
   <ul style="list-style-type: none;">
-  <li> Bet 10% of your account value each bet</li>
-  <li>Risk: This method has high volitility</li>
-   <li>Opportunity: The strategy attempts to minimize losses on losing streaks and maximize wins on winning streaks. </li>
+  <li> Bet a consistent amount of £10 each time</li>
+  <li>Risk: This method has a consistent risk and low volitility</li>
 </ul>
 
-![Backtest Strategies](images/srategy_plots.png)
+![Backtest Strategies](images/strategy_plots(corrected).png)
+
+### Outcome 
+The graph shows that the best strategies use **variable stake sizes** .This doesnt come for free. The addedd volatility increases with account size as seen in the major dips in account balance.
+
+|            Strategy           |   ROI  | Win Rate | Max Drawdown | Peak Profit |
+|:-----------------------------:|:------:|:--------:|:------------:|:-----------:|
+|         Raw Strategy          | -11.4  |   49.1   |    -140.40   |     0.00    |
+|      Percentage Strategy      | 144.2  |   58.9   |    -446.36   |   2333.22   |
+|           EV Strategy         |  16.9  |   61.2   |     -51.80   |    188.30   |
+| EV and Percentage Bet Strategy| 127.4  |   58.0   |    -452.92   |   2104.63   |
+
+The KPI table helps us identify 2 top strategies by diferent metrics
+
+**Top ROI**
+1.Percentage Strategy
+The top ROI of 144% it lets the winners run and culls the losers
+
+Investor Psychometric Analysis: Suited to growing an account and is extreemly emotionally stable and a big apetite for risk , able to stomach the 30% plus swings in account balance
+
+**Minimum Drawdown**
+1. EV Strategy Minimum Drawdown
+Focused on minimizing loss are we shocked that the EV performed so well on this metric.
+
+Investor Psychometric Analysis:  Such a strategy would be suited to a large bankroll who is risk averse
+### Expected Value
+The use of expected value was underwhelming when coupled with variable betting. 
+It did not yield better returns than a basic percentage strategy alone. 
+There are a few reasons for this:
+
+- Un-Precisise ability to predict Probability of a win. This lead to bet placing on games that donn`t truly have positive EV
+- EV calcualted with variable stake. This increased the likelyhood of positive EV bets being placed with higher account balances
+
+## Have we hit the jackpot!!
+
+ROI- 144.2%
+Peak Profit £2333.22
+
+Sure its all well mucking about with numbers in python, but what is the reality. After taking into account transaction fees, ROI drops to cerca 130%. But then we must remember bookmakers are in the business of seeing you lose money, not make it! And are quick to cull accounts showing signs of consistent profitable behaviour. Sure it could take a few months and you could make a few dollars before being shut down but nothing that will have you sipping cocktails on a beach in the short term. 
+
+That said the project has been succefull in showing how simple it is to use ML and develop winning strategies from the comfort of your home.
+
 ## Next Steps
 A precision of 64% is indicative of a primitive model. The next steps are aimed at increasing this metric to cerca 80% for a reliable model.
 

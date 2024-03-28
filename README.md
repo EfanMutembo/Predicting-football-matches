@@ -129,6 +129,7 @@ Now for the fun. Backtesting betting strategies. After research I found 3 main s
    <li>Opportunity: The strategy attempts to minimize losses on losing streaks and maximize wins on winning streaks. </li>
 </ul>
 
+![Backtest Strategies](images/srategy_plots.png)
 ## Next Steps
 A precision of 64% is indicative of a primitive model. The next steps are aimed at increasing this metric to cerca 80% for a reliable model.
 

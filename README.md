@@ -161,15 +161,6 @@ There are a few reasons for this:
 - Un-Precisise ability to predict Probability of a win. This lead to bet placing on games that donn`t truly have positive EV
 - EV calcualted with variable stake. This increased the likelyhood of positive EV bets being placed with higher account balances
 
-## Have we hit the jackpot!!
-
-ROI- 144.2%
-Peak Profit £2333.22
-
-Sure its all well mucking about with numbers in python, but what is the reality. After taking into account transaction fees, ROI drops to cerca 130%. But then we must remember bookmakers are in the business of seeing you lose money, not make it! And are quick to cull accounts showing signs of consistent profitable behaviour. Sure it could take a few months and you could make a few dollars before being shut down but nothing that will have you sipping cocktails on a beach in the short term. 
-
-That said the project has been successfull in showing how simple it is to use ML and develop winning strategies from the comfort of your home.
-
 ## Next Steps
 A precision of 64% is indicative of a primitive model. The next steps are aimed at increasing this metric to cerca 80% for a reliable model.
 
@@ -191,3 +182,13 @@ One of the major drawbacks to this model is grouping Losses and draws together t
   <li> Bet 10% of your account value each bet</li>
   <li>Risk is consistent and managed with this strategy as the stake is consitent</li>
 </ul>
+
+## Have we hit the jackpot!!
+
+ROI- 144.2%
+
+Peak Profit £2333.22
+
+Sure its all well mucking about with numbers in python, but what is the reality. After taking into account transaction fees, ROI drops to cerca 130%. But then we must remember bookmakers are in the business of seeing you lose money, not make it! And are quick to cull accounts showing signs of consistent profitable behaviour. Sure it could take a few months and you could make a few dollars before being shut down but nothing that will have you sipping cocktails on a beach in the short term. 
+
+That said the project has been successfull in showing how simple it is to use ML and develop winning strategies from the comfort of your home.
